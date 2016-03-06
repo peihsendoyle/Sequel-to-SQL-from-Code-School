@@ -1,11 +1,18 @@
 # Sequel-to-SQL-from-Code-School
+
+<a data-flickr-embed="true"  href="https://www.flickr.com/photos/101220285@N04/24333913229/in/datetaken/" title="avatar"><img src="https://farm2.staticflickr.com/1521/24333913229_4cfe7c453d.jpg" width="427" height="427" alt="avatar"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
+
+Director: Tieushinshin
+
 http://campus.codeschool.com/courses/the-sequel-to-sql
 
 ***Find:***
 
-```SELECT column FROM table 
+```
+SELECT column FROM table 
 WHERE criteria AND/OR criteria 
-ODER BY ASC/DESC;```
+ODER BY ASC/DESC;
+```
 
 SELECT *: select all the columns in table.
 
@@ -31,11 +38,13 @@ SELECT *: select all the columns in table.
 
 ***Create table:***
 
-```CREATE TABLE name ( 
+```
+CREATE TABLE name ( 
     column_name1 datatype CONSTRAINT1 CONSTRAINT2, 
     column_name2 datatype CONSTRAINTS,...
     CONSTRAINT name CONSTRAINT_NAME (column, column...
-);```
+);
+```
 
 **Constraints:** NOT NULL, UNIQUE, PRIMARY KEY, FOREIGN KEY (REFERENCES table(column) ), CHECK (criteria), DEFAULT.
 
@@ -63,10 +72,69 @@ SELECT *: select all the columns in table.
 
 ***Aggregate functions within clause:***
 
-```SELECT column, aggregate_function(column) 
+```
+SELECT column, aggregate_function(column) 
 FROM table 
 WHERE criteria 
 GROUP BY column 
-HAVING aggregate_function(column) criteria;```
+HAVING aggregate_function(column) criteria;
+```
 
+***Join multiple tables:***
+
+```
+SELECT table1.column AS "new name", table2.column AS "new name"... 
+FROM table1 
+TYPE JOIN table2 
+ON table1.id = table2.table1_id 
+TYPE JOIN table3 
+ON table2.id = table3.table2_id...
+WHERE criteria 
+ORDER BY table1/2/3.column ORDERTYPE;
+```
+
+***Aliasses:***
+
+```
+SELECT a.column AS "new name", b.column AS "new name"... 
+FROM table1 a
+TYPE JOIN table2 b
+ON a.id = b.a_id 
+TYPE JOIN table3 c
+ON b.id = c.b_id...
+WHERE criteria 
+ORDER BY a/b/c.column ORDERTYPE;
+```
+**Types of JOIN:** INNER, RIGHT OUTER, LEFT OUTER, FULL OUTER.
+
+***Subqueries:***
+
+```
+SELECT aggregate_func(column)
+FROM table1
+WHERE column IN
+(SELECT column
+FROM table2
+WHERE criteria);
+```
+
+***JOIN queries:***
+
+```
+SELECT aggregate_func(table.column)
+FROM table1
+TYPE JOIN table2
+ON table1.id = table2.table1_id
+WHERE criteria;
+```
+
+***Aliasses for JOIN queries:***
+
+```
+SELECT aggregate_func(a/b.column)
+FROM table1 a
+TYPE JOIN table2 b
+ON a.id = b.a_id
+WHERE criteria;
+```
 
