@@ -3,7 +3,9 @@ http://campus.codeschool.com/courses/the-sequel-to-sql
 
 ***Find:***
 
-`SELECT column FROM table WHERE criteria AND/OR criteria ODER BY ASC/DESC;`
+```SELECT column FROM table 
+WHERE criteria AND/OR criteria 
+ODER BY ASC/DESC;```
 
 SELECT *: select all the columns in table.
 
@@ -29,7 +31,11 @@ SELECT *: select all the columns in table.
 
 ***Create table:***
 
-`CREATE TABLE name ( column_name1 datatype CONSTRAINT1 CONSTRAINT2, column_name2 datatype CONSTRAINTS,...CONSTRAINT name CONSTRAINT_NAME (column, column...);`
+```CREATE TABLE name ( 
+    column_name1 datatype CONSTRAINT1 CONSTRAINT2, 
+    column_name2 datatype CONSTRAINTS,...
+    CONSTRAINT name CONSTRAINT_NAME (column, column...
+);```
 
 **Constraints:** NOT NULL, UNIQUE, PRIMARY KEY, FOREIGN KEY (REFERENCES table(column) ), CHECK (criteria), DEFAULT.
 
@@ -57,10 +63,10 @@ SELECT *: select all the columns in table.
 
 ***Aggregate functions within clause:***
 
-`SELECT column, aggregate_function(column) 
+```SELECT column, aggregate_function(column) 
 FROM table 
 WHERE criteria 
 GROUP BY column 
-HAVING aggregate_function(column) criteria;`
+HAVING aggregate_function(column) criteria;```
 
 
